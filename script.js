@@ -8,8 +8,8 @@ const myLinks = [
         url: "https://roblox-slap-battles.fandom.com/wiki/Masteries"
     },
     {
-        text: "Your Next Link Title",
-        url: "https://your-link-url.com"
+        text: "Simone Webdesktops",
+        url: "https://simone.computer/#/webdesktops"
     },
     {
         text: "Another Link Title",
