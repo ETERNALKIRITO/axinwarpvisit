@@ -12,9 +12,24 @@ const myLinks = [
         url: "https://simone.computer/#/webdesktops"
     },
     {
-        text: "Another Link Title",
-        url: "https://another-url.com"
+        text: "YT Vid Downloader 1",
+        url: "https://en1.savefrom.net/1-youtube-video-downloader-13sg/"
     },
+    {
+        text: "YT Vid Downloader 2",
+        url: "https://ssyoutube.online/en2/"
+    },
+    {
+        text: "Github/ETERNALKIRITO Gists",
+        url: "https://gist.github.com/ETERNALKIRITO"
+    },
+    {
+        text: "Netlify Dashboard",
+        url: "https://app.netlify.com/"
+    },
+    
+
+    
    
 ];
 
