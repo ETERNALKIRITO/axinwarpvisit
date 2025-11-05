@@ -35,6 +35,10 @@ const myLinks = [
         text: "Class 9 Maths OLD BOOK",
         url: "https://static.qumath.in/static/website/old-cdn-static/ncert-solutions/ncert-books-for-class-9-maths.pdf"
     },
+    {
+        text: "PastelChat",
+        url: "https://pastelchat-6xyjk.web.app/"
+    },
     
 
     
