@@ -27,6 +27,14 @@ const myLinks = [
         text: "Netlify Dashboard",
         url: "https://app.netlify.com/"
     },
+    {
+        text: "v86 Os Emulator",
+        url: "https://copy.sh/v86/"
+    },
+    {
+        text: "Class 9 Maths OLD BOOK",
+        url: "https://static.qumath.in/static/website/old-cdn-static/ncert-solutions/ncert-books-for-class-9-maths.pdf"
+    },
     
 
     
