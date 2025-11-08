@@ -21,7 +21,8 @@ const myLinks = [
     },
     {
         text: "Github/ETERNALKIRITO Gists",
-        url: "https://gist.github.com/ETERNALKIRITO"
+        url: "https://gist.github.com/ETERNALKIRITO",
+        logo: "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" // Example of a custom logo
     },
     {
         text: "Netlify Dashboard",
@@ -47,24 +48,66 @@ const myLinks = [
         text: "Useful Chatbot 4",
         url: "https://gemini.google.com/"
     },
-    
-    
-
-    
-   
 ];
 
 // ----- DO NOT EDIT BELOW THIS LINE -----
 
 const linkListContainer = document.getElementById('link-list');
+const searchBar = document.getElementById('search-bar');
 
-myLinks.forEach(link => {
-    if (link.url && link.text) { // Only creates a link if both url and text exist
-        const linkElement = document.createElement('a');
-        linkElement.href = link.url;
-        linkElement.textContent = link.text;
-        linkElement.className = 'link-item';
-        linkElement.target = '_blank'; // Optional: opens link in a new tab
-        linkListContainer.appendChild(linkElement);
+// Function to render the links
+const renderLinks = (linksToRender) => {
+    // Clear the existing list
+    linkListContainer.innerHTML = '';
+
+    // If no links match the search, show a message
+    if (linksToRender.length === 0) {
+        linkListContainer.innerHTML = '<p>No links found.</p>';
+        return;
     }
+
+    linksToRender.forEach(link => {
+        if (link.url && link.text) {
+            const linkElement = document.createElement('a');
+            linkElement.href = link.url;
+            linkElement.className = 'link-item';
+            linkElement.target = '_blank';
+
+            // --- Logo Handling ---
+            const logo = document.createElement('img');
+            logo.className = 'link-logo';
+            
+            if (link.logo) {
+                // Use the custom logo if provided
+                logo.src = link.logo;
+            } else {
+                // Otherwise, try to fetch the favicon
+                const domain = new URL(link.url).hostname;
+                logo.src = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+            }
+            // If the logo fails to load, it won't break the layout
+            logo.onerror = () => { logo.style.display = 'none'; };
+            
+            linkElement.appendChild(logo);
+
+            // --- Text Handling ---
+            const textElement = document.createElement('span');
+            textElement.textContent = link.text;
+            linkElement.appendChild(textElement);
+
+            linkListContainer.appendChild(linkElement);
+        }
+    });
+};
+
+// Event listener for the search bar
+searchBar.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filteredLinks = myLinks.filter(link => {
+        return link.text.toLowerCase().includes(searchTerm);
+    });
+    renderLinks(filteredLinks);
 });
+
+// Initial render of all links
+renderLinks(myLinks);
