@@ -48,6 +48,10 @@ const myLinks = [
         text: "Useful Chatbot 4",
         url: "https://gemini.google.com/"
     },
+    {
+        text: "Text To Speech",
+        url: "https://www.naturalreaders.com/online/"
+    },
 ];
 
 // ----- DO NOT EDIT BELOW THIS LINE -----
